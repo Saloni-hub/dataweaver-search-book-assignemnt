@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { Book, BookFormData } from '../types';
 
-const API_BASE_URL = 'http://64.227.142.191:8080/application-test-v1.1';
+const API_BASE_URL = '/api';
 
 interface ToastState {
   message: string;
@@ -29,7 +29,7 @@ export const searchBooks = createAsyncThunk(
   'books/searchBooks',
   async ({ title, sortDirection }: { title: string; sortDirection: 'ASC' | 'DESC' }, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books?title=${encodeURIComponent(title)}&DIR=${sortDirection}`);
+      const response = await fetch(`${API_BASE_URL}/books?title=${encodeURIComponent(title)}&DIR=${sortDirection}`);
       if (!response.ok) throw new Error('Failed to fetch books');
       return await response.json();
     } catch (error) {
@@ -42,7 +42,7 @@ export const fetchALLBooks = createAsyncThunk(
   'books/fetchAllBooks',
   async ({ page, size }: { page: number; size: number }, { rejectWithValue }) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books?page=${page}&pageSize=${size}`);
+      const response = await fetch(`${API_BASE_URL}/books?page=${page}&pageSize=${size}`);
       if (!response.ok) throw new Error('Failed to fetch books');
       return await response.json();
     } catch (error) {
@@ -56,7 +56,7 @@ export const addBook = createAsyncThunk(
   'books/addBook',
   async (bookData: BookFormData, { rejectWithValue, dispatch }) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books`, {
+      const response = await fetch(`${API_BASE_URL}/books`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bookData),
@@ -80,7 +80,7 @@ export const updateBook = createAsyncThunk(
   'books/updateBook',
   async ({ id, bookData,page=1,size=10 }: { id: number; bookData: BookFormData,page?: number; size?: number }, thunkAPI) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/books/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/books/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...bookData, id }),
