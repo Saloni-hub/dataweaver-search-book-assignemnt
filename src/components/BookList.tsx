@@ -29,8 +29,6 @@ export function BookList() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [filteredBooks, setFilteredBooks] = useState<Book[]>(books);
 
-  console.log(books, "dtaaaa", loading);
-
   useEffect(() => {
     dispatch(fetchALLBooks({ page: currentPage, size: PAGE_SIZE }));
   }, [dispatch, currentPage]);
