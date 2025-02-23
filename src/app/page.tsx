@@ -5,7 +5,7 @@ import { BookList } from "@/components/BookList";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store/store";
 import { clearToast } from "@/lib/store/bookSlice";
-import Toast from "@/components/Toast";
+import Toast from "@/components/UI/Toast";
 
 export default function Home() {
   const { message, type } = useSelector(

@@ -8,9 +8,9 @@ import {
   setSortDirection,
   updateBook,
 } from "@/lib/store/bookSlice";
-import { Card } from "./Card";
-import { Button } from "./Button";
-import { Pagination } from "./Pagination";
+import { Card } from "./UI/Card";
+import { Button } from "./UI/Button";
+import { Pagination } from "./UI/Pagination";
 import { BookForm } from "./BookForm";
 import Link from "next/link";
 import { SkeletonTable } from "./SketonTabe";

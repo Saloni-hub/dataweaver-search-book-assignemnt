@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Book } from "@/lib/types";
-import { Button } from "./Button";
-import { Modal } from "./Modal";
-import { CustomSelect } from "./CustomSelect";
+import { Button } from "./UI/Button";
+import { Modal } from "./UI/Modal";
+import { CustomSelect } from "./UI/CustomSelect";
 
 interface FilterModalProps {
   isOpen: boolean;

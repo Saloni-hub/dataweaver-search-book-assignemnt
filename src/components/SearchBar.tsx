@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { BookForm } from "./BookForm";
 import { AppDispatch, RootState } from "@/lib/store/store";
 import type { BookFormData } from "@/lib/types";
-import { Input } from "./Input";
-import { Button } from "./Button";
-import { Card } from "./Card";
+import { Input } from "./UI/Input";
+import { Button } from "./UI/Button";
+import { Card } from "./UI/Card";
 import { addBook, fetchALLBooks, searchBooks } from "@/lib/store/bookSlice";
 
 export function SearchBar() {

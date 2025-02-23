@@ -1,9 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { BookFormData } from "@/lib/types";
-import { Modal } from "./Modal";
-import { Button } from "./Button";
-import { Input } from "./Input";
+import { Modal } from "./UI/Modal";
+import { Button } from "./UI/Button";
+import { Input } from "./UI/Input";
 
 interface BookFormProps {
   initialData?: BookFormData;
