@@ -167,11 +167,13 @@ export function BookList() {
         books={books}
       />
 
-      <Pagination
-        currentPage={currentPage}
-        totalPages={books?.pagination?.totalPages}
-        onPageChange={setCurrentPage}
-      />
+      {books?.pagination?.totalPages && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={books?.pagination?.totalPages}
+          onPageChange={setCurrentPage}
+        />
+      )}
     </Card>
   );
 }
