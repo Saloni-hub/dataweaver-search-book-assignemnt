@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Book Search and Management Web Application
 
-## Getting Started
+Overview
 
-First, run the development server:
+This is a simple web application that allows users to search for books and manage their book list. Users can search for books by title using an API, view results with pagination, filtering, and sorting, add books to a list, and edit book details. The application has a responsive design suitable for both desktop and mobile devices.
 
-```bash
+Features
+
+Search Books: Users can search for books by title using an API.
+
+Results List: Displays search results with pagination, filtering, and sorting.
+
+Add to Books List: Users can add books to a database.
+
+Edit Books: Users can edit book details.
+
+Responsive Layout: Works well on both desktop and mobile devices.
+
+API Endpoints
+
+1. Search Books (GET Request)
+
+http://64.227.142.191:8080/application-test-v1.1/books?title=ab
+
+Parameters:
+
+title: The book title to search for.
+
+DIR: Sorting order (Possible values: ASC, DESC).
+
+2. Add a Book (POST Request)
+
+http://64.227.142.191:8080/application-test-v1.1/books
+
+Payload Example:
+
+{
+  "author": "hhtrgefgsd",
+  "country": "uytrf",
+  "language": "rdgrdsa",
+  "link": "ggrfds",
+  "pages": "9087",
+  "title": "tyred",
+  "year": "tffd",
+  "id": 556
+}
+
+3. Update Book Details (PUT Request)
+
+http://64.227.142.191:8080/application-test-v1.1/books/{id}
+
+Payload Example:
+
+{
+  "author": "Updated Author",
+  "country": "Updated Country",
+  "language": "Updated Language",
+  "link": "Updated Link",
+  "pages": "1234",
+  "title": "Updated Title",
+  "year": "2023",
+  "id": 556
+}
+
+Technologies & Libraries Used
+
+React JS: For building the UI.
+
+Fetch: For making API requests.
+
+Redux: For state management.
+
+HTML & CSS: For structuring and styling the application.
+
+Tailwind CSS: Used to create common reusable UI components.
+
+Common Components Built Using Tailwind CSS
+
+Button: Reusable button component with different variants.
+
+Input: Common input field component.
+
+Modal: Used for adding and editing books.
+
+Pagination: Component for handling paginated results.
+
+Installation & Setup
+
+Clone the repository:
+
+git clone [https://github.com/your-repo/book-search-app.git](https://github.com/Saloni-hub/dataweaver-search-book-assignemnt.git)
+
+Navigate to the project directory:
+
+cd book-search-app
+
+Install dependencies:
+
+npm install
+
+Start the application:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Conclusion
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This application provides an intuitive interface for users to search, add, and edit books efficiently. With a well-structured API and responsive design, it ensures a smooth user experience across different devices.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
